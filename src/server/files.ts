@@ -6,6 +6,7 @@
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { ATTACHMENT_CATEGORIES, type Attachment, type AttachmentCategory } from "../domain/model.ts";
+import { DEMO, demoDir } from "./demo.ts";
 import { nowIso, read, write } from "./store/json-store.ts";
 import { base } from "./vehicles.ts";
 
@@ -13,9 +14,12 @@ export const MAX_PHOTO_BYTES = 2.5 * 1024 * 1024;
 export const MAX_THUMB_BYTES = 300 * 1024;
 
 function uploadsDir(): string {
-  if (process.env.VERCEL) throw new Error("Lokalno skladište fajlova ne radi na Vercelu.");
+  if (DEMO) return path.join(demoDir(), "uploads");
   return path.join(process.cwd(), ".data", "uploads");
 }
+
+/** Putanja u folderu fotografija. Bez praćenja pri build-u: folder je lokalni ili privremen (demo), ne ide u paket servera. */
+const at = (...parts: string[]) => path.join(/* turbopackIgnore: true */ uploadsDir(), ...parts);
 
 const isJpeg = (b: Uint8Array) => b.length > 3 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff;
 
@@ -42,10 +46,10 @@ export async function addOrderPhoto(orderId: string, p: PhotoInput): Promise<Pho
   const b = base();
   const month = b.createdAt.slice(0, 7);
   const rel = (suffix: string) => path.posix.join(month, `${b.id}${suffix}.jpg`);
-  const dir = path.join(uploadsDir(), month);
+  const dir = at(month);
   await mkdir(dir, { recursive: true });
-  await writeFile(path.join(uploadsDir(), rel("")), p.main);
-  await writeFile(path.join(uploadsDir(), rel("_t")), p.thumb);
+  await writeFile(at(rel("")), p.main);
+  await writeFile(at(rel("_t")), p.thumb);
 
   const att: Attachment = {
     ...b,
@@ -66,7 +70,7 @@ export async function addOrderPhoto(orderId: string, p: PhotoInput): Promise<Pho
     return true;
   });
   if (!saved) {
-    await Promise.all([rm(path.join(uploadsDir(), att.file), { force: true }), rm(path.join(uploadsDir(), att.thumb), { force: true })]);
+    await Promise.all([rm(at(att.file), { force: true }), rm(at(att.thumb), { force: true })]);
     return { ok: false, error: "Nalog ne postoji." };
   }
   return { ok: true, id: att.id };
@@ -76,7 +80,7 @@ export async function readAttachmentFile(id: string, variant: "full" | "thumb"):
   const att = await read((db) => db.attachments.find((a) => a.id === id));
   if (!att) return null;
   const rel = variant === "thumb" ? att.thumb : att.file;
-  const full = path.join(uploadsDir(), rel);
+  const full = at(rel);
   // zaštita od izlaska iz foldera (putanja dolazi iz baze, ali proverava se svakako)
   if (!full.startsWith(uploadsDir() + path.sep)) return null;
   try {
@@ -93,7 +97,7 @@ export async function deleteAttachment(id: string): Promise<boolean> {
     return db.attachments.splice(i, 1)[0];
   });
   if (!att) return false;
-  await Promise.all([rm(path.join(uploadsDir(), att.file), { force: true }), rm(path.join(uploadsDir(), att.thumb), { force: true })]);
+  await Promise.all([rm(at(att.file), { force: true }), rm(at(att.thumb), { force: true })]);
   return true;
 }
 

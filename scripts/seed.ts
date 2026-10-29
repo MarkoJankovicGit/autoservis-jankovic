@@ -198,6 +198,20 @@ db.partsOrders.push({
   shareOpens: 0,
 });
 
+// termini u kalendaru: danas i narednih dana (jedan bez vozila u bazi, mušterija dolazi prvi put)
+const appt = (dayOffset: number, start: string, durationMin: number, a: { vehicle?: Vehicle; owner?: Customer; vehicleText?: string; customerName?: string; phone?: string; reason: string }) => {
+  const [h, m] = start.split(":").map(Number);
+  db.appointments.push({
+    ...base(), date: addDays(today, dayOffset), startMin: h * 60 + m, durationMin, status: "scheduled",
+    vehicleId: a.vehicle?.id, customerId: a.owner?.id, vehicleText: a.vehicleText, customerName: a.customerName, phone: a.phone && phone(a.phone).e164, reason: a.reason,
+  });
+};
+appt(0, "08:00", 60, { vehicle: octavia, owner: jelena, reason: "Mali servis" });
+appt(0, "10:30", 90, { vehicle: clio, owner: milan, reason: "Kočnice napred" });
+appt(0, "14:00", 30, { vehicleText: "Fiat Punto 1.2", customerName: "Nikola Jovanović", phone: "064 123 4000", reason: "Dijagnostika, lampica motora" });
+appt(1, "09:00", 120, { vehicle: sprinter, owner: firma, reason: "Zamena kvačila" });
+appt(2, "11:00", 60, { vehicle: golf, owner: petar, reason: "Priprema za registraciju" });
+
 await rm(path.join(process.cwd(), ".data", "uploads"), { recursive: true, force: true }); // fotografije bez zapisa
 await replaceAll(db);
 console.log(`seed: ${db.customers.length} klijenata, ${db.vehicles.length} vozila, ${db.orders.length} naloga, ${db.orderItems.length} stavki, ${db.reminders.length} podsetnika, ${db.suppliers.length} dobavljača, ${db.expenses.length} troškova, ${db.payments.length} uplata`);

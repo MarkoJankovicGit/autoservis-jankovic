@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { DEMO } from "@/server/demo";
 import { LoginForm } from "./login-form";
 
 export const metadata: Metadata = { title: "Prijava" };
@@ -19,6 +20,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           className="h-auto w-full max-w-[320px]"
         />
         <LoginForm next={next} />
+        {DEMO && <p className="-mt-6 rounded-lg bg-amber-100 px-3 py-2 text-center text-sm font-medium text-amber-950">Demo verzija sa primer podacima</p>}
       </div>
     </main>
   );

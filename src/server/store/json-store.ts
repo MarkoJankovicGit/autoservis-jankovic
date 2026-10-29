@@ -2,9 +2,11 @@
  * PRIVREMENO skladište za razvoj bez baze: jedan JSON fajl u .data/ (nije u gitu).
  * Zamenjuje ga Postgres; ostatak koda koristi samo read()/write() i ne zna kako se čuva.
  * Upisi su serijalizovani (jedan po jedan) i atomski (privremeni fajl + rename).
+ * Demo režim (grana `demo`): fajl je u privremenoj memoriji servera i kreće od snimka seed-a (vidi server/demo.ts).
  */
 import { mkdir, readFile, rename, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { DEMO, demoDir, demoStart } from "../demo.ts";
 import type { Appointment, Attachment, Customer, Expense, Invoice, OdometerReading, OrderItem, Ownership, PartsOrder, Payment, Reminder, ServiceOrder, Supplier, Vehicle, VehicleShare } from "../../domain/model.ts";
 
 export type Db = {
@@ -49,9 +51,7 @@ const emptyDb = (): Db => ({
 });
 
 function dataFile(): string {
-  if (process.env.VERCEL) {
-    throw new Error("Privremeno JSON skladište radi samo lokalno. Na Vercelu je potrebna baza.");
-  }
+  if (DEMO) return path.join(demoDir(), "dev-db.json");
   // statična putanja ispod radnog direktorijuma (testovi menjaju radni direktorijum na privremeni);
   // dinamička putanja bi naterala build da u serverski paket uključi ceo projekat
   return path.join(process.cwd(), ".data", "dev-db.json");
@@ -69,7 +69,7 @@ async function load(): Promise<Db> {
     cache = { mtimeMs: s.mtimeMs, db };
     return structuredClone(db);
   } catch (e) {
-    if ((e as NodeJS.ErrnoException).code === "ENOENT") return emptyDb();
+    if ((e as NodeJS.ErrnoException).code === "ENOENT") return DEMO ? { ...emptyDb(), ...(await demoStart<Db>()) } : emptyDb();
     throw e;
   }
 }

@@ -1,0 +1,1441 @@
+{
+ "date": "2026-10-29",
+ "db": {
+  "version": 1,
+  "customers": [
+   {
+    "id": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "type": "person",
+    "phones": [
+     {
+      "e164": "+381641234567"
+     }
+    ],
+    "name": "Petar Petrović",
+    "email": "petar.petrovic@primer.rs",
+    "note": "Zove uveče, posle 17h."
+   },
+   {
+    "id": "01a18890-b0de-73e2-b9fc-67cad6082e79",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "type": "person",
+    "phones": [
+     {
+      "e164": "+381652223344"
+     },
+     {
+      "e164": "+381113456789"
+     }
+    ],
+    "name": "Jelena Đorđević"
+   },
+   {
+    "id": "01a18890-b0de-7d7b-b2db-7dfe6de92be1",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "type": "person",
+    "phones": [
+     {
+      "e164": "+381639876543"
+     }
+    ],
+    "name": "Milan Nikolić"
+   },
+   {
+    "id": "01a18890-b0de-7adb-886e-e54a77aabb9e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "type": "person",
+    "phones": [
+     {
+      "e164": "+381601112233"
+     }
+    ],
+    "name": "Ana Stojanović",
+    "email": "ana.s@primer.rs"
+   },
+   {
+    "id": "01a18890-b0de-7569-bff6-719872c188c0",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "type": "company",
+    "phones": [
+     {
+      "e164": "+38114222333"
+     }
+    ],
+    "name": "Agro Kolubara d.o.o.",
+    "taxId": "104052135",
+    "email": "flota@agrokolubara.primer",
+    "address": "Industrijska 12, Valjevo",
+    "note": "Fakturisati krajem meseca."
+   },
+   {
+    "id": "01a18890-b0de-7bd9-8ac2-a9ca7777c910",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "type": "person",
+    "phones": [
+     {
+      "e164": "+381664445566"
+     }
+    ],
+    "name": "Dragan Marković"
+   },
+   {
+    "id": "01a18890-b0de-73d5-bb08-f6c619f2b7ee",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "type": "person",
+    "phones": [
+     {
+      "e164": "+381625556677"
+     }
+    ],
+    "name": "Zoran Ilić"
+   }
+  ],
+  "vehicles": [
+   {
+    "id": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "VA123AB",
+    "vin": "WVWZZZ1JZ3W000001",
+    "make": "Volkswagen",
+    "model": "Golf 4",
+    "year": 2003,
+    "fuel": "diesel",
+    "engine": "1.9 TDI 74 kW",
+    "color": "Siva",
+    "registrationExpires": "2026-11-19"
+   },
+   {
+    "id": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "VA456CD",
+    "make": "Škoda",
+    "model": "Octavia",
+    "year": 2015,
+    "fuel": "diesel",
+    "engine": "1.6 TDI 77 kW",
+    "color": "Bela",
+    "registrationExpires": "2027-03-18"
+   },
+   {
+    "id": "01a18890-b0df-7c25-960c-7e271dfbbe43",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "BG1234ŽŠ",
+    "make": "Toyota",
+    "model": "Yaris",
+    "year": 2019,
+    "fuel": "hybrid",
+    "engine": "1.5 Hybrid",
+    "color": "Crvena"
+   },
+   {
+    "id": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "VA789EF",
+    "vin": "VF1RFB00X56123456",
+    "make": "Renault",
+    "model": "Clio",
+    "year": 2011,
+    "fuel": "petrol",
+    "engine": "1.2 16V",
+    "registrationExpires": "2026-10-19"
+   },
+   {
+    "id": "01a18890-b0e0-7b64-b848-965ebf7e8a6c",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "LO2211",
+    "make": "Fiat",
+    "model": "Punto",
+    "year": 2007,
+    "fuel": "lpg",
+    "note": "Ugrađen TNG 2019."
+   },
+   {
+    "id": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "VA100AK",
+    "make": "Mercedes-Benz",
+    "model": "Sprinter 313",
+    "year": 2016,
+    "fuel": "diesel",
+    "engine": "2.1 CDI 95 kW"
+   },
+   {
+    "id": "01a18890-b0e0-7801-8066-d2d7cee64304",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "VA101AK",
+    "make": "Dacia",
+    "model": "Duster",
+    "year": 2021,
+    "fuel": "diesel",
+    "engine": "1.5 dCi"
+   },
+   {
+    "id": "01a18890-b0e0-761f-b89d-47860dc7bc56",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "UB555GH",
+    "make": "Opel",
+    "model": "Astra H",
+    "year": 2008,
+    "fuel": "petrol"
+   },
+   {
+    "id": "01a18890-b0e0-7442-8fdf-def0701a48bc",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "plate": "VA333ZI",
+    "make": "Peugeot",
+    "model": "308",
+    "year": 2012,
+    "fuel": "diesel",
+    "engine": "1.6 HDi"
+   },
+   {
+    "id": "01a18890-b0e0-7aee-a7fe-02907fcd333e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vin": "ZFA14600",
+    "make": "Zastava",
+    "model": "Yugo 45",
+    "year": 1988,
+    "fuel": "petrol",
+    "note": "Oldtajmer, bez registracije."
+   }
+  ],
+  "ownerships": [
+   {
+    "id": "01a18890-b0df-731d-b98d-6986856ae6b6",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0df-7039-88e2-43514dc21370",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "customerId": "01a18890-b0de-73e2-b9fc-67cad6082e79",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0df-7bf9-b81f-ccfd315c2ff1",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0df-7c25-960c-7e271dfbbe43",
+    "customerId": "01a18890-b0de-73e2-b9fc-67cad6082e79",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0e0-74b4-acbb-b7e531b3e6cb",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "customerId": "01a18890-b0de-7d7b-b2db-7dfe6de92be1",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0e0-77d4-9075-8929430573c6",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7b64-b848-965ebf7e8a6c",
+    "customerId": "01a18890-b0de-7adb-886e-e54a77aabb9e",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0e0-70f3-8849-f888821e04f2",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "customerId": "01a18890-b0de-7569-bff6-719872c188c0",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0e0-7ba5-9303-56c102b52ead",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7801-8066-d2d7cee64304",
+    "customerId": "01a18890-b0de-7569-bff6-719872c188c0",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0e0-7b9d-8881-3fc5e952c3d6",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-761f-b89d-47860dc7bc56",
+    "customerId": "01a18890-b0de-7bd9-8ac2-a9ca7777c910",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0e0-7518-b320-c799506359dc",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7442-8fdf-def0701a48bc",
+    "customerId": "01a18890-b0de-73d5-bb08-f6c619f2b7ee",
+    "validFrom": "2024-05-12",
+    "validTo": "2026-04-12",
+    "reason": "initial"
+   },
+   {
+    "id": "01a18890-b0e0-7b4b-82e3-71783483c815",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7442-8fdf-def0701a48bc",
+    "customerId": "01a18890-b0de-7bd9-8ac2-a9ca7777c910",
+    "validFrom": "2026-04-12",
+    "reason": "sale"
+   },
+   {
+    "id": "01a18890-b0e0-7e71-ae6f-6ba0786a8dce",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7aee-a7fe-02907fcd333e",
+    "customerId": "01a18890-b0de-7d7b-b2db-7dfe6de92be1",
+    "validFrom": "2024-08-20",
+    "reason": "initial"
+   }
+  ],
+  "odometerReadings": [
+   {
+    "id": "01a18890-b0df-7448-b836-c0dccb2aef5d",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "km": 241300,
+    "date": "2024-11-08",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0df-74f7-a6f4-cb328ce2ff5a",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "km": 249800,
+    "date": "2025-05-07",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0df-7a28-b435-81684bc747f7",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "km": 258200,
+    "date": "2025-11-03",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0df-7359-9005-4bc3a06dc249",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "km": 266900,
+    "date": "2026-05-02",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0df-7591-bc4e-46ccc6b47fb4",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "km": 274600,
+    "date": "2026-10-17",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0df-76ee-8f52-505e05c99d09",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "km": 188000,
+    "date": "2025-09-24",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0df-75f0-a86e-56f6c56eb9e2",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "km": 207400,
+    "date": "2026-09-29",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-7762-aad2-2cd8c4590cef",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0df-7c25-960c-7e271dfbbe43",
+    "km": 61250,
+    "date": "2026-10-24",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-7211-b26b-cce6f01f7664",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "km": 132000,
+    "date": "2025-03-08",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-7c7e-b39f-bf186a239d64",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "km": 139500,
+    "date": "2026-02-21",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-719b-b331-29ba55abce45",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "km": 143100,
+    "date": "2026-08-30",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-7fba-86a9-c5244fb7c450",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7b64-b848-965ebf7e8a6c",
+    "km": 198700,
+    "date": "2026-07-31",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-715f-b355-252139a6dee3",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "km": 310000,
+    "date": "2024-11-28",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-7165-bc8e-6373723495a0",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "km": 352000,
+    "date": "2025-11-13",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-7492-9330-7f730810c6b1",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "km": 391500,
+    "date": "2026-10-09",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-78d6-aae8-6fb0b2d18e8e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7801-8066-d2d7cee64304",
+    "km": 54000,
+    "date": "2026-01-02",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-76d6-943f-c8afdd295e6c",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7801-8066-d2d7cee64304",
+    "km": 79800,
+    "date": "2026-10-14",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-7ee8-a1b1-ed03aa137dc2",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7442-8fdf-def0701a48bc",
+    "km": 160000,
+    "date": "2025-06-16",
+    "source": "manual"
+   },
+   {
+    "id": "01a18890-b0e0-779e-80cc-ba3722776764",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-7442-8fdf-def0701a48bc",
+    "km": 171200,
+    "date": "2026-07-21",
+    "source": "manual"
+   }
+  ],
+  "orders": [
+   {
+    "id": "01a18890-b0e0-74bc-9285-d498dbb40f5e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "2024-0001",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "status": "done",
+    "receivedDate": "2024-11-06",
+    "kmIn": 241300,
+    "complaint": "Mali servis",
+    "workDone": "Urađen mali servis. Primećeno curenje ulja na poklopcu ventila, za praćenje.",
+    "completedDate": "2024-11-08",
+    "kmOut": 241300
+   },
+   {
+    "id": "01a18890-b0e0-7898-a5d7-27f24e750050",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "2025-0001",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "status": "done",
+    "receivedDate": "2025-11-01",
+    "kmIn": 258200,
+    "complaint": "Škripe kočnice napred",
+    "workDone": "Zamenjeni prednji diskovi i pločice. Zadnje pločice 40 %.",
+    "completedDate": "2025-11-03",
+    "kmOut": 258200
+   },
+   {
+    "id": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "2026-0001",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "status": "done",
+    "receivedDate": "2026-04-30",
+    "kmIn": 266900,
+    "complaint": "Mali servis + lampica",
+    "workDone": "Mali servis. Lampica: senzor temperature, zamenjen.",
+    "completedDate": "2026-05-02",
+    "kmOut": 266900
+   },
+   {
+    "id": "01a18890-b0e0-772a-90a3-9c189d50302a",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "2026-0002",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "status": "open",
+    "receivedDate": "2026-10-28",
+    "kmIn": 274600,
+    "complaint": "Lupka nešto napred desno na rupama"
+   },
+   {
+    "id": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "2025-0002",
+    "vehicleId": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "customerId": "01a18890-b0de-73e2-b9fc-67cad6082e79",
+    "status": "done",
+    "receivedDate": "2025-09-22",
+    "kmIn": 188000,
+    "complaint": "Veliki servis",
+    "workDone": "Zamenjen set zupčastog kaiša sa pumpom vode, mali servis.",
+    "completedDate": "2025-09-24",
+    "kmOut": 188000
+   },
+   {
+    "id": "01a18890-b0e0-79cc-8027-39c79ded7b8b",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "2026-0003",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "customerId": "01a18890-b0de-7d7b-b2db-7dfe6de92be1",
+    "status": "done",
+    "receivedDate": "2026-08-28",
+    "kmIn": 143100,
+    "complaint": "Klima ne hladi",
+    "workDone": "Dopunjena klima, zamenjen filter kabine. Nema curenja.",
+    "completedDate": "2026-08-30",
+    "kmOut": 143100
+   },
+   {
+    "id": "01a18890-b0e0-7285-ab24-86ada1758028",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "2026-0004",
+    "vehicleId": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "customerId": "01a18890-b0de-7569-bff6-719872c188c0",
+    "status": "open",
+    "receivedDate": "2026-10-26",
+    "kmIn": 391500,
+    "complaint": "Ne vuče, dimi crno. Hitno, vozilo je potrebno firmi."
+   }
+  ],
+  "orderItems": [
+   {
+    "id": "01a18890-b0e0-76fd-99c8-bd1eedcb8618",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-74bc-9285-d498dbb40f5e",
+    "sortOrder": 1,
+    "kind": "labor",
+    "name": "Zamena ulja i filtera",
+    "qtyMilli": 1000,
+    "unit": "h",
+    "unitPrice": 150000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-76f4-9caa-b61f55a11642",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-74bc-9285-d498dbb40f5e",
+    "sortOrder": 2,
+    "kind": "material",
+    "name": "Ulje 5W40 dizel",
+    "qtyMilli": 4500,
+    "unit": "l",
+    "unitPrice": 115000,
+    "unitCost": 80000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-71e0-ac70-4fcc0a916529",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-74bc-9285-d498dbb40f5e",
+    "sortOrder": 3,
+    "kind": "part",
+    "name": "Filter ulja",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 120000,
+    "unitCost": 75000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7c08-94df-00f6a1506f11",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-74bc-9285-d498dbb40f5e",
+    "sortOrder": 4,
+    "kind": "part",
+    "name": "Filter vazduha",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 180000,
+    "unitCost": 110000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-722a-abd4-5f7fa7cd853f",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-74bc-9285-d498dbb40f5e",
+    "sortOrder": 5,
+    "kind": "part",
+    "name": "Filter goriva",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 240000,
+    "unitCost": 150000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7de7-8c98-eaf48bc7717d",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7898-a5d7-27f24e750050",
+    "sortOrder": 1,
+    "kind": "labor",
+    "name": "Zamena diskova i pločica napred",
+    "qtyMilli": 1500,
+    "unit": "h",
+    "unitPrice": 200000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7f5c-9151-198b885bb844",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7898-a5d7-27f24e750050",
+    "sortOrder": 2,
+    "kind": "part",
+    "name": "Disk kočioni prednji",
+    "qtyMilli": 2000,
+    "unit": "kom",
+    "unitPrice": 420000,
+    "unitCost": 290000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-71c3-8523-25151d69bcc4",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7898-a5d7-27f24e750050",
+    "sortOrder": 3,
+    "kind": "part",
+    "name": "Pločice prednje (set)",
+    "qtyMilli": 1000,
+    "unit": "kompl.",
+    "unitPrice": 390000,
+    "unitCost": 260000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-75a6-ad73-d9ce51780774",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "sortOrder": 1,
+    "kind": "labor",
+    "name": "Zamena ulja i filtera",
+    "qtyMilli": 1000,
+    "unit": "h",
+    "unitPrice": 150000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7da7-b915-155e49395312",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "sortOrder": 2,
+    "kind": "material",
+    "name": "Ulje 5W40 dizel",
+    "qtyMilli": 4500,
+    "unit": "l",
+    "unitPrice": 115000,
+    "unitCost": 80000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7293-bfe5-8fc9b4fce671",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "sortOrder": 3,
+    "kind": "part",
+    "name": "Filter ulja",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 120000,
+    "unitCost": 75000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7dc5-806a-a80aaac0a9a4",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "sortOrder": 4,
+    "kind": "part",
+    "name": "Senzor temperature rashladne tečnosti",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 260000,
+    "unitCost": 170000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-787e-8e40-36533e95e744",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "sortOrder": 5,
+    "kind": "labor",
+    "name": "Dijagnostika",
+    "qtyMilli": 500,
+    "unit": "h",
+    "unitPrice": 200000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7e62-a40c-65532c7cbdec",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-772a-90a3-9c189d50302a",
+    "sortOrder": 1,
+    "kind": "labor",
+    "name": "Pregled trapa",
+    "qtyMilli": 500,
+    "unit": "h",
+    "unitPrice": 200000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-730b-87f0-6db7ca0800a4",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "sortOrder": 1,
+    "kind": "labor",
+    "name": "Zamena zupčastog kaiša i pumpe",
+    "qtyMilli": 3000,
+    "unit": "h",
+    "unitPrice": 200000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-73de-957f-375864a4fbe6",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "sortOrder": 2,
+    "kind": "part",
+    "name": "Set zupčastog kaiša sa pumpom",
+    "qtyMilli": 1000,
+    "unit": "kompl.",
+    "unitPrice": 1850000,
+    "unitCost": 1320000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-70f9-bacc-dd071fb94b53",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "sortOrder": 3,
+    "kind": "material",
+    "name": "Antifriz G13",
+    "qtyMilli": 5000,
+    "unit": "l",
+    "unitPrice": 65000,
+    "unitCost": 42000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7d8b-b31b-fe662480df3e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "sortOrder": 4,
+    "kind": "material",
+    "name": "Ulje 5W40 dizel",
+    "qtyMilli": 4500,
+    "unit": "l",
+    "unitPrice": 115000,
+    "unitCost": 80000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7282-b7f3-4f8f8209ba79",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "sortOrder": 5,
+    "kind": "part",
+    "name": "Filter ulja",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 120000,
+    "unitCost": 75000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7fea-9d15-c6dc933a01f7",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-79cc-8027-39c79ded7b8b",
+    "sortOrder": 1,
+    "kind": "labor",
+    "name": "Servis klime",
+    "qtyMilli": 1000,
+    "unit": "h",
+    "unitPrice": 250000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7001-b08d-cb6250071a8e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-79cc-8027-39c79ded7b8b",
+    "sortOrder": 2,
+    "kind": "material",
+    "name": "Freon R134a",
+    "qtyMilli": 600,
+    "unit": "kg",
+    "unitPrice": 400000,
+    "unitCost": 260000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7df5-9c54-9f4558dbaca3",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-79cc-8027-39c79ded7b8b",
+    "sortOrder": 3,
+    "kind": "part",
+    "name": "Filter kabine",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 130000,
+    "unitCost": 70000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7620-9793-d51a9e0e7d69",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7285-ab24-86ada1758028",
+    "sortOrder": 1,
+    "kind": "labor",
+    "name": "Dijagnostika",
+    "qtyMilli": 1000,
+    "unit": "h",
+    "unitPrice": 200000,
+    "discountBp": 0
+   },
+   {
+    "id": "01a18890-b0e0-7cdb-ae0f-273e58e66454",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7285-ab24-86ada1758028",
+    "sortOrder": 2,
+    "kind": "part",
+    "name": "EGR ventil",
+    "qtyMilli": 1000,
+    "unit": "kom",
+    "unitPrice": 2800000,
+    "discountBp": 0
+   }
+  ],
+  "attachments": [],
+  "reminders": [
+   {
+    "id": "01a18890-b0e0-7963-8674-d00267cfe65b",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "orderId": "01a18890-b0e0-7898-a5d7-27f24e750050",
+    "title": "Kočnice zadnje (pločice)",
+    "dueKm": 283200,
+    "status": "open"
+   },
+   {
+    "id": "01a18890-b0e0-74c3-93f5-18d416c50551",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "title": "Mali servis",
+    "dueDate": "2026-11-02",
+    "dueKm": 276900,
+    "status": "open"
+   },
+   {
+    "id": "01a18890-b0e0-7771-a540-95d9f0d52265",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "title": "Mali servis",
+    "dueDate": "2026-09-24",
+    "dueKm": 203000,
+    "status": "open"
+   },
+   {
+    "id": "01a18890-b0e0-7507-97d0-9eae83b3722e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "title": "Veliki servis (zupčasti kaiš)",
+    "dueDate": "2030-09-24",
+    "dueKm": 308000,
+    "status": "open"
+   },
+   {
+    "id": "01a18890-b0e0-7fc1-9d70-6268cdeb4033",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "orderId": "01a18890-b0e0-79cc-8027-39c79ded7b8b",
+    "title": "Klima (servis)",
+    "dueDate": "2027-08-30",
+    "status": "open"
+   },
+   {
+    "id": "01a18890-b0e0-7266-8e19-01f7300b88a4",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "title": "Tehnički pregled",
+    "dueDate": "2026-10-19",
+    "status": "open"
+   }
+  ],
+  "payments": [
+   {
+    "id": "01a18890-b0e1-7de5-bc39-8d80a6bade24",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-74bc-9285-d498dbb40f5e",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "amount": 1207500,
+    "date": "2024-11-08"
+   },
+   {
+    "id": "01a18890-b0e1-7247-8bbf-4510c67b35ca",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7898-a5d7-27f24e750050",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "amount": 1530000,
+    "date": "2025-11-03"
+   },
+   {
+    "id": "01a18890-b0e1-74d4-967f-548d727bac55",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "amount": 600000,
+    "date": "2026-05-02"
+   },
+   {
+    "id": "01a18890-b0e1-720d-a533-6059cf726485",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "orderId": "01a18890-b0e0-7039-ad83-f13eddfb7e8b",
+    "customerId": "01a18890-b0de-73e2-b9fc-67cad6082e79",
+    "amount": 3412500,
+    "date": "2025-09-29"
+   }
+  ],
+  "suppliers": [
+   {
+    "id": "01a18890-b0e0-76c7-afd2-91d1cf35b133",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "name": "Auto Delovi Plus",
+    "phone": "+38114222444",
+    "email": "prodaja@autoplus.primer",
+    "note": "Dostava do 14h isti dan."
+   },
+   {
+    "id": "01a18890-b0e0-7f0a-aac0-93c63b1a0036",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "name": "Delovi Kolubara",
+    "phone": "+38114333555"
+   },
+   {
+    "id": "01a18890-b0e0-7064-b535-0ed37431fda0",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "name": "Mazivo Valjevo",
+    "phone": "+38163111000",
+    "note": "Ulja i tečnosti, popust 10 % na 20 l."
+   }
+  ],
+  "expenses": [
+   {
+    "id": "01a18890-b0e1-75dd-82af-cd19154cd831",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-24",
+    "category": "rent",
+    "amount": 4000000,
+    "description": "Kirija radionice",
+    "paidDate": "2026-10-24"
+   },
+   {
+    "id": "01a18890-b0e1-7363-afe4-2b46a7102e1b",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-26",
+    "category": "utilities",
+    "amount": 950000,
+    "description": "Struja i voda",
+    "paidDate": "2026-10-26"
+   },
+   {
+    "id": "01a18890-b0e1-7910-a1ea-b38b15935a88",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-27",
+    "category": "salaries",
+    "amount": 8500000,
+    "description": "Plata pomoćnika",
+    "paidDate": "2026-10-27"
+   },
+   {
+    "id": "01a18890-b0e1-7141-98da-9349fb289068",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-09-24",
+    "category": "rent",
+    "amount": 4000000,
+    "description": "Kirija radionice",
+    "paidDate": "2026-09-24"
+   },
+   {
+    "id": "01a18890-b0e1-7c44-bfe4-1c57ffaec65b",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-09-26",
+    "category": "utilities",
+    "amount": 1020000,
+    "description": "Struja i voda",
+    "paidDate": "2026-09-26"
+   },
+   {
+    "id": "01a18890-b0e1-7ab0-8c8e-cc418d6602bf",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-09-27",
+    "category": "salaries",
+    "amount": 8500000,
+    "description": "Plata pomoćnika",
+    "paidDate": "2026-09-27"
+   },
+   {
+    "id": "01a18890-b0e1-7d9a-aa99-318d8ff9dd26",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-08-25",
+    "category": "rent",
+    "amount": 4000000,
+    "description": "Kirija radionice",
+    "paidDate": "2026-08-25"
+   },
+   {
+    "id": "01a18890-b0e1-72ef-99a5-d4be0d61c123",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-08-27",
+    "category": "utilities",
+    "amount": 1090000,
+    "description": "Struja i voda",
+    "paidDate": "2026-08-27"
+   },
+   {
+    "id": "01a18890-b0e1-70ed-b7ac-8ee90410a9e3",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-08-28",
+    "category": "salaries",
+    "amount": 8500000,
+    "description": "Plata pomoćnika",
+    "paidDate": "2026-08-28"
+   },
+   {
+    "id": "01a18890-b0e1-7c60-9f57-30af670545fe",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-17",
+    "category": "parts",
+    "amount": 1840000,
+    "description": "Diskovi, pločice, filteri",
+    "supplierId": "01a18890-b0e0-76c7-afd2-91d1cf35b133",
+    "dueDate": "2026-11-16",
+    "documentNo": "AP-2026-1182"
+   },
+   {
+    "id": "01a18890-b0e1-7203-8801-7b17a831cf9d",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-09-19",
+    "category": "parts",
+    "amount": 2310000,
+    "description": "Set zupčastog kaiša, pumpa",
+    "supplierId": "01a18890-b0e0-76c7-afd2-91d1cf35b133",
+    "paidDate": "2026-09-19",
+    "documentNo": "AP-2026-0994"
+   },
+   {
+    "id": "01a18890-b0e1-7cd3-ae97-7a3820affe30",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-05-01",
+    "category": "parts",
+    "amount": 610000,
+    "description": "Ulje, filter, senzor temperature",
+    "supplierId": "01a18890-b0e0-76c7-afd2-91d1cf35b133",
+    "orderId": "01a18890-b0e0-7837-880a-a6380a6c1b3e",
+    "paidDate": "2026-05-01",
+    "documentNo": "AP-2026-0410"
+   },
+   {
+    "id": "01a18890-b0e1-7b4e-8fe8-14f68e9fc749",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-22",
+    "category": "material",
+    "amount": 2160000,
+    "description": "Ulje 5W40 20 l, antifriz",
+    "paidDate": "2026-10-22"
+   },
+   {
+    "id": "01a18890-b0e1-7981-a59f-ff22550fa640",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-26",
+    "category": "tools",
+    "amount": 1290000,
+    "description": "Moment ključ",
+    "paidDate": "2026-10-26"
+   },
+   {
+    "id": "01a18890-b0e1-7441-a415-4419e5b3ff3e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-20",
+    "category": "equipment",
+    "amount": 14500000,
+    "description": "Uređaj za dijagnostiku",
+    "paidDate": "2026-10-20"
+   },
+   {
+    "id": "01a18890-b0e1-7bc4-85d9-1ed80d1902e7",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-09",
+    "category": "parts",
+    "amount": 980000,
+    "description": "Krajnici, manžetne",
+    "supplierId": "01a18890-b0e0-7f0a-aac0-93c63b1a0036",
+    "dueDate": "2026-10-24",
+    "documentNo": "DK-554"
+   }
+  ],
+  "partsOrders": [
+   {
+    "id": "01a18890-b0e1-7f9c-b11a-7a0a46cc6bc7",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "number": "N-2026-0001",
+    "supplierId": "01a18890-b0e0-76c7-afd2-91d1cf35b133",
+    "orderId": "01a18890-b0e0-7285-ab24-86ada1758028",
+    "vehicleId": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "status": "sent",
+    "neededBy": "2026-10-30",
+    "note": "Original ili Pierburg.",
+    "sentAt": "2026-10-29T16:49:06.273Z",
+    "lines": [
+     {
+      "id": "01a18890-b0e1-72b2-b1a9-3b8077a72994",
+      "name": "EGR ventil",
+      "partNumber": "A6511400602",
+      "qtyMilli": 1000,
+      "receivedMilli": 0
+     },
+     {
+      "id": "01a18890-b0e1-746a-ae97-1e645bd5b265",
+      "name": "Dihtung EGR ventila",
+      "qtyMilli": 1000,
+      "receivedMilli": 0
+     }
+    ],
+    "shareOpens": 0
+   }
+  ],
+  "invoices": [],
+  "appointments": [
+   {
+    "id": "01a18890-b0e1-753b-aebe-d9595710f756",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-29",
+    "startMin": 480,
+    "durationMin": 60,
+    "status": "scheduled",
+    "vehicleId": "01a18890-b0df-7c32-ba3b-160c166932fa",
+    "customerId": "01a18890-b0de-73e2-b9fc-67cad6082e79",
+    "reason": "Mali servis"
+   },
+   {
+    "id": "01a18890-b0e1-7d18-be6e-9e3cac4a4f5e",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-29",
+    "startMin": 630,
+    "durationMin": 90,
+    "status": "scheduled",
+    "vehicleId": "01a18890-b0e0-763c-86ed-39aedf8affe1",
+    "customerId": "01a18890-b0de-7d7b-b2db-7dfe6de92be1",
+    "reason": "Kočnice napred"
+   },
+   {
+    "id": "01a18890-b0e1-7638-bee2-71806bd13c00",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-29",
+    "startMin": 840,
+    "durationMin": 30,
+    "status": "scheduled",
+    "vehicleText": "Fiat Punto 1.2",
+    "customerName": "Nikola Jovanović",
+    "phone": "+381641234000",
+    "reason": "Dijagnostika, lampica motora"
+   },
+   {
+    "id": "01a18890-b0e1-78e9-bd23-25094822d799",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-30",
+    "startMin": 540,
+    "durationMin": 120,
+    "status": "scheduled",
+    "vehicleId": "01a18890-b0e0-7222-9eee-03479b658a76",
+    "customerId": "01a18890-b0de-7569-bff6-719872c188c0",
+    "reason": "Zamena kvačila"
+   },
+   {
+    "id": "01a18890-b0e1-7ad0-b298-2e29ff69c982",
+    "tenantId": "jankovic",
+    "createdAt": "2026-10-29T16:49:06.267Z",
+    "updatedAt": "2026-10-29T16:49:06.267Z",
+    "date": "2026-10-31",
+    "startMin": 660,
+    "durationMin": 60,
+    "status": "scheduled",
+    "vehicleId": "01a18890-b0de-7c78-b397-72b3a55358cb",
+    "customerId": "01a18890-b0db-74c5-8861-80d5c7a32ad0",
+    "reason": "Priprema za registraciju"
+   }
+  ],
+  "shares": [],
+  "sequences": {
+   "order:2024": 1,
+   "order:2025": 2,
+   "order:2026": 4,
+   "parts:2026": 1
+  }
+ }
+}
