@@ -1,0 +1,20 @@
+# Samo bezbednosna ažuriranja. Redovna ažuriranja verzija su isključena
+# (open-pull-requests-limit: 0); paketi se ažuriraju ručno uz odobrenje.
+# Bezbednosna ažuriranja se uključuju u GitHub podešavanjima repoa:
+# Settings → Code security → Dependabot security updates.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    cooldown:
+      default-days: 7
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 0
+    cooldown:
+      default-days: 7

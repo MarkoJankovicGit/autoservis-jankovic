@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="sr-Latn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#3e3e3f" />
+    <title>Nema interneta · Janković</title>
+    <style>
+      :root { color-scheme: dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+        background: #3e3e3f;
+        color: #f4f4f5;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        text-align: center;
+      }
+      main { width: 100%; max-width: 360px; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+      img { width: 100%; max-width: 260px; height: auto; }
+      h1 { margin: 0; font-size: 22px; font-weight: 700; }
+      button {
+        min-height: 48px;
+        width: 100%;
+        border: 0;
+        border-radius: 10px;
+        background: #185e93;
+        color: #fff;
+        font: inherit;
+        font-size: 17px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:focus-visible { outline: 3px solid #8cc2ec; outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="/brand/logo-on-dark.svg" alt="Automehaničar Janković" width="996" height="376" />
+      <h1>Nema internet veze</h1>
+      <button type="button" onclick="location.reload()">Pokušaj ponovo</button>
+    </main>
+  </body>
+</html>

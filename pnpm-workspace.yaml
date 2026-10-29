@@ -1,0 +1,8 @@
+# Bezbednost zavisnosti (globalna pravila projekta)
+# Nijedna verzija mlađa od 7 dana, uključujući tranzitivne zavisnosti.
+minimumReleaseAge: 10080
+# Build/postinstall skripte zavisnosti su blokirane; dozvola samo paket po paket kroz allowBuilds.
+strictDepBuilds: true
+allowBuilds:
+  # postinstall samo proverava gotov binarni modul (stize kao opcioni paket) - nije potreban
+  unrs-resolver: false

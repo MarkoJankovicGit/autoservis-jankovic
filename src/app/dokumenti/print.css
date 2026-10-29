@@ -1,0 +1,49 @@
+/* Dokumenti: A4, uvek svetla tema (i kad je uređaj u tamnom režimu), bez navigacije pri štampi. */
+@page {
+  size: A4;
+  margin: 12mm 14mm;
+}
+
+.doc-root {
+  color-scheme: light;
+  --foreground: #1e1e20;
+  --muted-foreground: #5f5f63;
+  --border: #d4d5da;
+  color: #1e1e20;
+}
+
+.doc-page {
+  width: 210mm;
+  max-width: 100%;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: #fff;
+  padding: 14mm;
+  box-shadow: 0 2px 16px rgb(0 0 0 / 0.12);
+}
+
+@media print {
+  html,
+  body {
+    background: #fff !important;
+  }
+  .doc-page {
+    width: auto;
+    min-height: auto;
+    padding: 0;
+    box-shadow: none;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .doc-table tr {
+    break-inside: avoid;
+  }
+}
+
+@media (max-width: 640px) {
+  .doc-page {
+    padding: 6mm;
+    min-height: auto;
+  }
+}
