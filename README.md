@@ -38,10 +38,22 @@ Aplikacija je na http://localhost:3000.
 | `pnpm icons` | ponovo generiše ikonice i kopira logo iz `brand/` |
 | `pnpm test` / `pnpm test:coverage` | testovi (Node test runner), pokrivenost domain sloja mora biti 100 % linija |
 | `pnpm seed` | briše lokalne podatke i puni izmišljene klijente i vozila |
+| `pnpm db:generate` | posle izmene `src/server/store/schema.ts`: nova SQL migracija u `drizzle/` |
+| `pnpm db:import-json` | jednokratno: prenosi stari `.data/dev-db.json` u lokalnu bazu |
 
-## Podaci do uvođenja baze
+## Baza i fotografije
 
-Dok baza ne postoji, podaci se čuvaju u `.data/dev-db.json` (nije u gitu). To radi samo lokalno; na Vercelu skladište namerno javlja grešku. Ostatak koda koristi use-case funkcije iz `src/server/`, pa prelazak na Postgres ne menja ekrane.
+| | Lokalno i testovi | Produkcija (Vercel) |
+|---|---|---|
+| Baza | PGlite (pravi Postgres u Node-u) u `.data/pglite`; testovi u memoriji | Supabase Postgres, Frankfurt (`DATABASE_URL`) |
+| Fotografije | `.data/uploads` | privatan Supabase Storage bucket `fotografije` (`SUPABASE_URL`, `SUPABASE_SECRET_KEY`) |
+| Migracije | primenjuju se same pri pokretanju | `vercel-build` ih primenjuje pre build-a (samo Production) |
+
+- Šema: `src/server/store/schema.ts`; migracije: `drizzle/`. Kolone prate entitete iz `src/domain/model.ts`.
+- `src/server/store/store.ts` daje ostatku koda isti `read()`/`write()` kao ranije; upis ide kao jedna transakcija sa samo izmenjenim redovima.
+- Lokalnu bazu drži jedan proces: zaustavi `pnpm dev` pre `pnpm seed` ili `pnpm db:import-json`.
+- Provera posle deploy-a: `/api/zdravlje` (javno, samo „ok“ ili „greška“ za bazu i fotografije).
+- Noćni bekap: GitHub Actions `Noćni bekap baze` (tajna `SUPABASE_DB_URL`), čuva se 30 dana kao artifact.
 
 ## Pravila za zavisnosti
 
@@ -52,4 +64,4 @@ Dok baza ne postoji, podaci se čuvaju u `.data/dev-db.json` (nije u gitu). To r
 
 ## Pristup
 
-Jedna lozinka za servis. Sesija traje godinu dana po uređaju. Promena `APP_PASSWORD_HASH` odjavljuje sve uređaje. Javne strane bez prijave su samo `/k/<token>` (karton za mušteriju) i `/n/<token>` (narudžbenica za dobavljača).
+Jedna lozinka za servis. Sesija traje godinu dana po uređaju. Promena `APP_PASSWORD_HASH` odjavljuje sve uređaje. Posle 5 pogrešnih lozinki sa iste adrese prijava je zaključana 15 minuta (brojač je u bazi). Javne strane bez prijave su samo `/k/<token>` (karton za mušteriju) i `/n/<token>` (narudžbenica za dobavljača).

@@ -11,6 +11,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // PGlite (lokalna baza za razvoj) učitava svoj WASM sa diska; ne pakuje se u server
+  serverExternalPackages: ["@electric-sql/pglite"],
   // PDF kartona čita font i logo sa diska; na Vercelu moraju ući u paket funkcije
   outputFileTracingIncludes: {
     "/api/podeli/[id]/pdf": ["./assets/fonts/*.ttf", "./public/icons/icon-192.png"],

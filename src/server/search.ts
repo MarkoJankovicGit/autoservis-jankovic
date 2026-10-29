@@ -4,7 +4,7 @@
 import { formatPlate, looksLikePlate, normalizePlate } from "../domain/plate.ts";
 import { customerMatches } from "./customers.ts";
 import { vehicleMatches } from "./vehicles.ts";
-import { read } from "./store/json-store.ts";
+import { read } from "./store/store.ts";
 
 export type SearchResults = {
   vehicles: { id: string; plate?: string; vin?: string; title: string; owner?: string }[];

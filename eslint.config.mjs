@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // lokalni podaci (baza, fotografije) i generisane migracije
+    ".data/**",
+    "drizzle/**",
   ]),
 ]);
 

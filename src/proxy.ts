@@ -27,6 +27,6 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     // sve osim Next statike, ikonica, manifesta, logoa i fajlova sa ekstenzijom
-    "/((?!_next/static|_next/image|icons/|brand/|manifest.webmanifest|sw.js|offline.html|icon.svg|apple-icon.png|favicon.ico|robots.txt).*)",
+    "/((?!_next/static|_next/image|icons/|brand/|manifest.webmanifest|sw.js|offline.html|api/zdravlje|icon.svg|apple-icon.png|favicon.ico|robots.txt).*)",
   ],
 };

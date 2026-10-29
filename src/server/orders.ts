@@ -15,7 +15,7 @@ import { paymentStatus, type PaymentStatus } from "../domain/finance.ts";
 import { isWaiting } from "../domain/parts-orders.ts";
 import { parseKm, validateVehicle, type FieldErrors, type VehicleRaw } from "../domain/validation.ts";
 import type { Duplicate } from "./customers.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 import { base, conflicts, currentOwnership, resolveOwner, vehicleFields, type OwnerChoice } from "./vehicles.ts";
 import { markArrived } from "./appointments.ts";
 

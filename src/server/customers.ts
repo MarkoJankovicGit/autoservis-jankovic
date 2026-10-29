@@ -7,7 +7,7 @@ import { phoneSearchKey } from "../domain/phone.ts";
 import { plateSearchKey } from "../domain/plate.ts";
 import { foldText } from "../domain/text.ts";
 import { validateCustomer, type CustomerRaw, type CustomerValue, type FieldErrors } from "../domain/validation.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 
 export type Duplicate = { id: string; name: string; reason: string };
 

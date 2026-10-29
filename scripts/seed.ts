@@ -1,4 +1,4 @@
-// Test podaci za lokalni razvoj (izmišljeni klijenti i vozila). Briše postojeće podatke u .data/dev-db.json.
+// Test podaci za lokalni razvoj (izmišljeni klijenti i vozila). Briše postojeće podatke u lokalnoj bazi (.data/pglite); zaustavi pnpm dev pre pokretanja.
 // Pokretanje: pnpm seed
 import { addDays, addMonths, todayIso } from "../src/domain/dates.ts";
 import { uuidv7 } from "../src/domain/id.ts";
@@ -6,7 +6,7 @@ import { TENANT_ID, type Customer, type Fuel, type OdometerReading, type OrderIt
 import { formatOrderNumber, type ItemKind } from "../src/domain/orders.ts";
 import { normalizePhone } from "../src/domain/phone.ts";
 import { normalizePlate } from "../src/domain/plate.ts";
-import { replaceAll, type Db } from "../src/server/store/json-store.ts";
+import { replaceAll, type Db } from "../src/server/store/store.ts";
 import { rm } from "node:fs/promises";
 import path from "node:path";
 

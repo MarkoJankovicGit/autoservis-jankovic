@@ -11,7 +11,7 @@ import { isWaiting, statusAfterReceive, validatePartsOrder, validateReceive, typ
 import type { FieldErrors } from "../domain/validation.ts";
 import { foldText } from "../domain/text.ts";
 import { hashToken, looksLikeToken, newToken } from "./share-tokens.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 import { base } from "./vehicles.ts";
 
 export type PoResult = { ok: true; id: string } | { ok: false; errors: FieldErrors };

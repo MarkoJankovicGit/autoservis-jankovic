@@ -6,3 +6,5 @@ strictDepBuilds: true
 allowBuilds:
   # postinstall samo proverava gotov binarni modul (stize kao opcioni paket) - nije potreban
   unrs-resolver: false
+  # drizzle-kit (samo razvoj) preko tsx: postinstall samo proverava binarni esbuild koji stiže kao opcioni paket
+  esbuild: false

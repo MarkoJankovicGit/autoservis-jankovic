@@ -5,7 +5,7 @@ import { todayIso, type IsoDate } from "../domain/dates.ts";
 import { overlapCount, validateAppointment, type AppointmentRaw, type AppointmentStatus } from "../domain/appointments.ts";
 import type { Appointment, Customer, Vehicle } from "../domain/model.ts";
 import type { FieldErrors } from "../domain/validation.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 import { base, currentOwnership } from "./vehicles.ts";
 
 export type ApptResult = { ok: true; id: string; overlap: number } | { ok: false; errors: FieldErrors };

@@ -9,7 +9,7 @@ import { shareExpiry, shareState, validateShare, type ShareRaw, type ShareState,
 import type { FieldErrors } from "../domain/validation.ts";
 import { readAttachmentFile } from "./files.ts";
 import { hashToken, looksLikeToken, newToken } from "./share-tokens.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 import { base, currentOwnership } from "./vehicles.ts";
 
 const fail = (errors: FieldErrors) => ({ ok: false as const, errors });

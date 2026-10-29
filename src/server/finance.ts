@@ -26,7 +26,7 @@ import { itemTotal, orderTotals } from "../domain/orders.ts";
 import { formatPhone } from "../domain/phone.ts";
 import { formatPlate } from "../domain/plate.ts";
 import type { FieldErrors } from "../domain/validation.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 import { base } from "./vehicles.ts";
 
 export type FinResult = { ok: true; id: string } | { ok: false; errors: FieldErrors };

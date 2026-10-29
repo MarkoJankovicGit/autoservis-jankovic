@@ -9,7 +9,7 @@ import { isWaiting } from "../domain/parts-orders.ts";
 import { normalizePhone } from "../domain/phone.ts";
 import { foldText } from "../domain/text.ts";
 import type { FieldErrors } from "../domain/validation.ts";
-import { nowIso, read, write } from "./store/json-store.ts";
+import { nowIso, read, write } from "./store/store.ts";
 import { base } from "./vehicles.ts";
 
 export type SupResult = { ok: true; id: string } | { ok: false; errors: FieldErrors };

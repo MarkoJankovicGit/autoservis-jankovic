@@ -10,7 +10,7 @@ let S: typeof import("./shares.ts");
 let V: typeof import("./vehicles.ts");
 let O: typeof import("./orders.ts");
 let F: typeof import("./files.ts");
-let DB: typeof import("./store/json-store.ts");
+let DB: typeof import("./store/store.ts");
 
 before(async () => {
   cwd = process.cwd();
@@ -20,7 +20,7 @@ before(async () => {
   V = await import("./vehicles.ts");
   O = await import("./orders.ts");
   F = await import("./files.ts");
-  DB = await import("./store/json-store.ts");
+  DB = await import("./store/store.ts");
 });
 after(async () => {
   process.chdir(cwd);

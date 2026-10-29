@@ -7,7 +7,7 @@ import type { Customer, Reminder, Vehicle } from "../domain/model.ts";
 import { latest, type Reading } from "../domain/odometer.ts";
 import { reminderDue, reminderTargets, validateReminder, type ReminderRaw } from "../domain/reminders.ts";
 import type { FieldErrors } from "../domain/validation.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 import { base, currentOwnership } from "./vehicles.ts";
 import type { ReminderWithDue } from "./orders.ts";
 

@@ -10,7 +10,7 @@ import { plateSearchKey } from "../domain/plate.ts";
 import { foldText } from "../domain/text.ts";
 import { validateVehicle, type CustomerRaw, type FieldErrors, type VehicleRaw, type VehicleValue } from "../domain/validation.ts";
 import { checkCustomerForInsert, insertCustomer, type Duplicate } from "./customers.ts";
-import { nowIso, read, write, type Db } from "./store/json-store.ts";
+import { nowIso, read, write, type Db } from "./store/store.ts";
 
 export type OwnerChoice =
   | { mode: "existing"; customerId: string }
