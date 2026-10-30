@@ -116,7 +116,7 @@ export default async function NalogPage({
         <div className="flex min-w-0 flex-col gap-6">
           <section className="flex flex-col gap-5 rounded-2xl border bg-card p-4 sm:p-6">
             <TextBlock orderId={o.id} field="complaint" title="Prijavljeno / šta treba uraditi" value={o.complaint} placeholder="Šta mušterija prijavljuje" />
-            <TextBlock orderId={o.id} field="workDone" title="Šta je urađeno" value={o.workDone} placeholder="Zamenjene pločice i diskovi napred" />
+            <TextBlock orderId={o.id} field="workDone" title="Šta je urađeno" value={o.workDone} placeholder="Zamenjene pločice i diskovi napred" empty="Još nije upisano." />
           </section>
 
           <section aria-labelledby="stavke" className="rounded-2xl border bg-card p-4 sm:p-6">

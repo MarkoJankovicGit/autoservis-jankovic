@@ -135,10 +135,11 @@ export default async function DokumentPage({ params }: { params: Promise<{ id: s
         </table>
 
         <div className="mt-3 ml-auto w-[80mm] max-w-full text-[13px] tabular">
-          {(["labor", "part", "material"] as const).filter((k) => totals.byKind[k]).map((k) => (
+          {/* po vrsti pre popusta, da se redovi sabiraju do „Ukupno“ */}
+          {(["labor", "part", "material"] as const).filter((k) => totals.grossByKind[k]).map((k) => (
             <div key={k} className="flex justify-between py-0.5">
               <span className="text-[var(--muted-foreground)]">{ITEM_KIND_TOTAL_LABELS[k]}</span>
-              <span>{m(totals.byKind[k])}</span>
+              <span>{m(totals.grossByKind[k])}</span>
             </div>
           ))}
           {totals.discount > 0 && (

@@ -190,10 +190,11 @@ export function ItemsEditor({ orderId, items, editable, suggestions }: { orderId
       {items.length > 0 && (
         <div className="mt-1 rounded-xl bg-muted/60 p-4">
           <dl className="grid grid-cols-[1fr_auto] gap-x-4 gap-y-1 text-sm tabular">
-            {(["labor", "part", "material"] as ItemKind[]).filter((k) => totals.byKind[k]).map((k) => (
+            {/* po vrsti pre popusta, da se redovi sabiraju do „Ukupno“ */}
+            {(["labor", "part", "material"] as ItemKind[]).filter((k) => totals.grossByKind[k]).map((k) => (
               <div key={k} className="contents">
                 <dt className="text-muted-foreground">{ITEM_KIND_TOTAL_LABELS[k]}</dt>
-                <dd className="text-right">{money(totals.byKind[k])}</dd>
+                <dd className="text-right">{money(totals.grossByKind[k])}</dd>
               </div>
             ))}
             {totals.discount > 0 && (

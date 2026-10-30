@@ -16,6 +16,7 @@ export function TextBlock({
   title,
   value,
   placeholder,
+  empty,
   hint,
   emphasize,
 }: {
@@ -24,6 +25,8 @@ export function TextBlock({
   title: string;
   value?: string;
   placeholder: string;
+  /** tekst dok polje nije popunjeno, kad primer iz placeholder-a ne bi trebalo da liči na upisan sadržaj */
+  empty?: string;
   hint?: string;
   emphasize?: boolean;
 }) {
@@ -59,7 +62,7 @@ export function TextBlock({
       ) : value ? (
         <p className="whitespace-pre-line">{value}</p>
       ) : (
-        <p className="text-muted-foreground">{placeholder}</p>
+        <p className="text-muted-foreground">{empty ?? placeholder}</p>
       )}
     </section>
   );

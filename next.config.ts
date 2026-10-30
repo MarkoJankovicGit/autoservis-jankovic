@@ -20,6 +20,8 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },
+      // logo i ikonice: keš jedan dan (nazivi fajlova nemaju heš, pa izmena logotipa stiže najkasnije sutradan)
+      { source: "/brand/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }] },
       // service worker: uvek nova verzija, da izmene stignu odmah
       { source: "/sw.js", headers: [{ key: "Cache-Control", value: "no-cache, no-store, must-revalidate" }] },
       // deljive strane za mušterije i dobavljače: bez indeksiranja i bez keša u posrednicima

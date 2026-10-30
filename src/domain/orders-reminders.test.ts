@@ -62,6 +62,9 @@ test("zbirovi naloga i zarada", () => {
   assert.equal(t.byKind.material, 465750);
   assert.equal(t.total, 1055750);
   assert.equal(t.discount, 51750);
+  // pregled se sabira: zbir po vrsti pre popusta − popust = ukupno
+  assert.deepEqual(t.grossByKind, { labor: 300000, part: 290000, material: 517500 });
+  assert.equal(t.grossByKind.labor + t.grossByKind.part + t.grossByKind.material - t.discount, t.total);
   assert.equal(t.cost, 520000);
   assert.equal(t.profit, 535750);
   assert.equal(t.missingCost, 1);

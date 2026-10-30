@@ -16,7 +16,7 @@ export function MobileTopBar() {
     <header className="sticky top-0 z-30 bg-sidebar pt-[env(safe-area-inset-top)] text-sidebar-foreground lg:hidden">
       <div className="flex h-14 items-center gap-3 px-4">
         <Link href="/" className="flex items-center gap-2.5" aria-label="Početna">
-          <Image src="/brand/icon-j.svg" alt="" width={32} height={32} unoptimized className="size-8 rounded-md" />
+          <Image src="/brand/icon-j.svg" alt="" width={32} height={32} loading="eager" unoptimized className="size-8 rounded-md" />
           <span className="font-heading text-base font-semibold tracking-tight">Automehaničar Janković</span>
         </Link>
         <GlobalSearch

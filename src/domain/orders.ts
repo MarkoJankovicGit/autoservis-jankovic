@@ -129,7 +129,10 @@ export function itemCost(i: PricedItem): Para | null {
 
 export type OrderTotals = {
   total: Para;
+  /** po vrsti, posle popusta */
   byKind: Record<ItemKind, Para>;
+  /** po vrsti, pre popusta: za pregled koji se sabira (pre popusta − popust = ukupno) */
+  grossByKind: Record<ItemKind, Para>;
   discount: Para;
   /** nabavna vrednost delova i materijala za koje je uneta */
   cost: Para;
@@ -141,19 +144,22 @@ export type OrderTotals = {
 
 export function orderTotals(items: PricedItem[]): OrderTotals {
   const byKind: Record<ItemKind, Para> = { labor: 0, part: 0, material: 0 };
+  const grossByKind: Record<ItemKind, Para> = { labor: 0, part: 0, material: 0 };
   let discount = 0;
   let cost = 0;
   let missingCost = 0;
   for (const i of items) {
     const t = itemTotal(i);
+    const gross = lineTotal(i.qtyMilli, i.unitPrice, 0);
     byKind[i.kind] += t;
-    discount += lineTotal(i.qtyMilli, i.unitPrice, 0) - t;
+    grossByKind[i.kind] += gross;
+    discount += gross - t;
     const c = itemCost(i);
     if (c !== null) cost += c;
     else if (i.kind !== "labor") missingCost++;
   }
   const total = sum(Object.values(byKind));
-  return { total, byKind, discount, cost, profit: total - cost, missingCost };
+  return { total, byKind, grossByKind, discount, cost, profit: total - cost, missingCost };
 }
 
 // ---------- prijem ----------
