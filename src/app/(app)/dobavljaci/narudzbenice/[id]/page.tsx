@@ -16,6 +16,8 @@ import { formatPhone, telHref } from "@/domain/phone";
 import { getPartsOrder } from "@/server/parts-orders";
 import { abortPartsOrder, sendPartsOrder } from "../../actions";
 import { SharePanel } from "./share-panel";
+import { DeleteDialog } from "@/components/delete-dialog";
+import { deletionImpact } from "@/server/deletion";
 import { ReceiveForm } from "./receive-form";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -33,8 +35,8 @@ const statusCls: Record<string, string> = {
 
 export default async function NarudzbenicaPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const p = await getPartsOrder(id);
-  if (!p) notFound();
+  const [p, impact] = await Promise.all([getPartsOrder(id), deletionImpact("partsOrder", id)]);
+  if (!p || !impact) notFound();
   const v = p.vehicle;
   const editable = p.status !== "received" && p.status !== "cancelled" && !p.lines.some((l) => l.receivedMilli > 0);
   const receivable = p.status === "sent" || p.status === "partial" || p.status === "draft";
@@ -203,6 +205,7 @@ export default async function NarudzbenicaPage({ params }: { params: Promise<{ i
               </ConfirmSubmit>
             </form>
           )}
+          <DeleteDialog kind="partsOrder" id={p.id} what={`narudžbenicu ${p.number}`} label="Obriši narudžbenicu" impact={impact} size="default" className="self-start" />
         </aside>
       </div>
     </>

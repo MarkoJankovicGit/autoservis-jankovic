@@ -74,7 +74,7 @@ export function setAppointmentStatus(id: string, status: Exclude<AppointmentStat
 
 export function deleteAppointment(id: string): Promise<boolean> {
   return write((db) => {
-    const i = db.appointments.findIndex((x) => x.id === id && x.status !== "arrived");
+    const i = db.appointments.findIndex((x) => x.id === id);
     if (i < 0) return false;
     db.appointments.splice(i, 1);
     return true;

@@ -13,6 +13,8 @@ import { formatPhone, telHref } from "@/domain/phone";
 import { getSupplier } from "@/server/suppliers";
 import { markExpensePaid } from "../../finansije/actions";
 import { archiveSupplier } from "../actions";
+import { DeleteDialog } from "@/components/delete-dialog";
+import { deletionImpact } from "@/server/deletion";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const d = await getSupplier((await params).id);
@@ -21,8 +23,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function DobavljacPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const d = await getSupplier(id);
-  if (!d) notFound();
+  const [d, impact] = await Promise.all([getSupplier(id), deletionImpact("supplier", id)]);
+  if (!d || !impact) notFound();
   const { supplier: s, expenses, partsOrders } = d;
   const unpaid = expenses.filter((e) => !e.paidDate);
   const owed = unpaid.reduce((a, e) => a + e.amount, 0);
@@ -163,14 +165,17 @@ export default async function DobavljacPage({ params }: { params: Promise<{ id: 
         </section>
       </div>
 
-      <form action={archiveSupplier} className="mt-6">
-        <input type="hidden" name="id" value={s.id} />
-        <input type="hidden" name="archived" value={s.archivedAt ? "0" : "1"} />
-        <Button type="submit" variant="ghost" className="text-muted-foreground">
-          {s.archivedAt ? <ArchiveRestore aria-hidden /> : <Archive aria-hidden />}
-          {s.archivedAt ? "Vrati iz arhive" : "Arhiviraj dobavljača"}
-        </Button>
-      </form>
+      <div className="mt-6 flex flex-wrap items-center gap-2">
+        <form action={archiveSupplier}>
+          <input type="hidden" name="id" value={s.id} />
+          <input type="hidden" name="archived" value={s.archivedAt ? "0" : "1"} />
+          <Button type="submit" variant="ghost" className="text-muted-foreground">
+            {s.archivedAt ? <ArchiveRestore aria-hidden /> : <Archive aria-hidden />}
+            {s.archivedAt ? "Vrati iz arhive" : "Arhiviraj dobavljača"}
+          </Button>
+        </form>
+        <DeleteDialog kind="supplier" id={s.id} what={`dobavljača ${s.name}`} label="Obriši dobavljača" impact={impact} size="default" />
+      </div>
     </>
   );
 }

@@ -3,7 +3,7 @@
  * Ostatak koda radi kao i ranije, nad celim skupom podataka (`Db`) kroz read()/write():
  * - čitanje učitava sve tabele samo kad se promenila verzija podataka (red `meta`), inače koristi keš instance;
  * - upis zaključava red verzije, primenjuje izmenu na kopiju i u jednoj transakciji upisuje samo razliku
- *   (obrisane, nove i izmenjene redove), pa povećava verziju; druge instance servera tako znaju da im je keš star.
+ *   (nove, izmenjene i obrisane redove), pa povećava verziju; druge instance servera tako znaju da im je keš star.
  * Za ovaj obim (jedna radnja) to je brzo; kad podaci porastu, česti upiti mogu da pređu na direktne SQL upite modul po modul.
  */
 import { existsSync } from "node:fs";
@@ -154,8 +154,13 @@ async function loadAll(tx: Executor): Promise<{ version: number; db: Db }> {
   return { version: m!.version, db };
 }
 
-/** Upisuje razliku između dva stanja. Redosled: brisanje (deca pre roditelja), unos (roditelji pre dece), izmene. */
-async function persistDiff(tx: Executor, before: Db, after: Db): Promise<boolean> {
+/**
+ * Upisuje razliku između dva stanja. Redosled poštuje strane ključeve:
+ * - uobičajeno: unos (roditelji pre dece), izmene, brisanje (deca pre roditelja); izmena tako može da pokaže na nov red
+ *   i da ukloni vezu ka redu koji se briše (npr. termin bez obrisanog naloga);
+ * - zamena celog sadržaja (`deletesFirst`): prvo brisanje, da novi redovi mogu da dobiju iste tablice i brojeve.
+ */
+async function persistDiff(tx: Executor, before: Db, after: Db, { deletesFirst = false } = {}): Promise<boolean> {
   let changed = false;
   const plan = keys.map((k) => {
     const prev = new Map(list(before, k).map((e) => [e.id, e]));
@@ -171,11 +176,14 @@ async function persistDiff(tx: Executor, before: Db, after: Db): Promise<boolean
     return { k, t: COLLECTIONS[k], inserts, updates, deletes };
   });
 
-  for (const p of [...plan].reverse()) {
-    if (!p.deletes.length) continue;
-    changed = true;
-    for (let i = 0; i < p.deletes.length; i += 500) await tx.delete(p.t).where(inArray(p.t.id, p.deletes.slice(i, i + 500)));
-  }
+  const deletes = async () => {
+    for (const p of [...plan].reverse()) {
+      if (!p.deletes.length) continue;
+      changed = true;
+      for (let i = 0; i < p.deletes.length; i += 500) await tx.delete(p.t).where(inArray(p.t.id, p.deletes.slice(i, i + 500)));
+    }
+  };
+  if (deletesFirst) await deletes();
   for (const p of plan) {
     if (!p.inserts.length) continue;
     changed = true;
@@ -188,6 +196,7 @@ async function persistDiff(tx: Executor, before: Db, after: Db): Promise<boolean
       await tx.update(p.t).set(toRow(p.t, p.k, e) as never).where(eq(p.t.id, e.id));
     }
   }
+  if (!deletesFirst) await deletes();
 
   for (const [key, value] of Object.entries(after.sequences)) {
     if (before.sequences[key] === value) continue;
@@ -219,7 +228,7 @@ export async function read<T>(fn: (db: Db) => T): Promise<T> {
 }
 
 /** Upis: funkcija menja db; čuva se samo ako ne baci grešku (cela izmena je jedna transakcija). */
-export function write<T>(fn: (db: Db) => T): Promise<T> {
+export function write<T>(fn: (db: Db) => T, opts: { deletesFirst?: boolean } = {}): Promise<T> {
   const run = queue
     .catch(() => undefined)
     .then(async () => {
@@ -230,7 +239,7 @@ export function write<T>(fn: (db: Db) => T): Promise<T> {
         const before = cache?.version === m!.version ? cache.db : (await loadAll(tx)).db;
         const draft = structuredClone(before);
         const r = fn(draft);
-        if (await persistDiff(tx, before, draft)) {
+        if (await persistDiff(tx, before, draft, opts)) {
           await tx.update(meta).set({ version: m!.version + 1 }).where(eq(meta.id, 1));
           next = { version: m!.version + 1, db: draft };
         } else next = { version: m!.version, db: before };
@@ -245,9 +254,12 @@ export function write<T>(fn: (db: Db) => T): Promise<T> {
 
 /** Za seed, uvoz i testove: zamena celog sadržaja. */
 export function replaceAll(db: Db): Promise<void> {
-  return write((cur) => {
-    Object.assign(cur, emptyDb(), structuredClone(db));
-  });
+  return write(
+    (cur) => {
+      Object.assign(cur, emptyDb(), structuredClone(db));
+    },
+    { deletesFirst: true },
+  );
 }
 
 export const nowIso = () => new Date().toISOString();

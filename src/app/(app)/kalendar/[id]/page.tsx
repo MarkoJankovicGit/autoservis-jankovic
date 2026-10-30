@@ -130,17 +130,15 @@ export default async function TerminPage({ params }: { params: Promise<{ id: str
         )}
       </div>
 
-      {a.status !== "arrived" && (
-        <form action={removeAppointment} className="mt-6">
-          <input type="hidden" name="id" value={a.id} />
-          <ConfirmSubmit message="Obrisati termin iz kalendara?">
-            <Button type="submit" variant="ghost" className="text-muted-foreground hover:text-destructive">
-              <Trash2 aria-hidden />
-              Obriši termin
-            </Button>
-          </ConfirmSubmit>
-        </form>
-      )}
+      <form action={removeAppointment} className="mt-6">
+        <input type="hidden" name="id" value={a.id} />
+        <ConfirmSubmit message={a.orderId ? "Obrisati termin iz kalendara? Nalog otvoren iz termina ostaje." : "Obrisati termin iz kalendara?"}>
+          <Button type="submit" variant="ghost" className="text-muted-foreground hover:text-destructive">
+            <Trash2 aria-hidden />
+            Obriši termin
+          </Button>
+        </ConfirmSubmit>
+      </form>
     </div>
   );
 }

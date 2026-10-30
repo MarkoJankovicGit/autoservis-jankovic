@@ -53,6 +53,7 @@ Aplikacija je na http://localhost:3000.
 - `src/server/store/store.ts` daje ostatku koda isti `read()`/`write()` kao ranije; upis ide kao jedna transakcija sa samo izmenjenim redovima.
 - Lokalnu bazu drži jedan proces: zaustavi `pnpm dev` pre `pnpm seed` ili `pnpm db:import-json`.
 - Provera posle deploy-a: `/api/zdravlje` (javno, samo „ok“ ili „greška“ za bazu i fotografije).
+- Brisanje (`src/server/deletion.ts`): sa klijentom, vozilom ili nalogom nestaje sve što bez njih ne postoji (nalozi, uplate, računi, fotografije); trošak, narudžbenica i termin ostaju bez veze. Pre potvrde dijalog prikazuje tačan spisak. Brisanje je trajno; trag ostaje samo u noćnom bekapu.
 - Noćni bekap: GitHub Actions `Noćni bekap baze` (tajna `SUPABASE_DB_URL`), čuva se 30 dana kao artifact.
 
 ## Pravila za zavisnosti

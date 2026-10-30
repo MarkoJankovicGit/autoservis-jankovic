@@ -215,7 +215,7 @@ export function addReading(vehicleId: string, km: number | null, date: string, n
 
 export function deleteReading(vehicleId: string, readingId: string): Promise<boolean> {
   return write((db) => {
-    const i = db.odometerReadings.findIndex((r) => r.id === readingId && r.vehicleId === vehicleId && r.source === "manual");
+    const i = db.odometerReadings.findIndex((r) => r.id === readingId && r.vehicleId === vehicleId);
     if (i < 0) return false;
     db.odometerReadings.splice(i, 1);
     return true;

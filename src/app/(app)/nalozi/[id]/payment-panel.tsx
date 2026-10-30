@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { CheckCircle2, FileText, Plus, Receipt, Undo2, Wallet } from "lucide-react";
+import { CheckCircle2, FileText, Plus, Receipt, Trash2, Undo2, Wallet } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,7 @@ import { PAYMENT_STATUS_LABELS, type PaymentStatus } from "@/domain/finance";
 import { formatMoney } from "@/domain/money";
 import type { Payment } from "@/domain/model";
 import { makeInvoice, savePayment, voidInvoice, voidPayment } from "../actions";
+import { removeFromOrder } from "../../delete-actions";
 
 type Props = {
   orderId: string;
@@ -133,6 +134,17 @@ export function PaymentPanel({ orderId, orderStatus, total, paid, status, paymen
                   <Undo2 className="size-4" aria-hidden />
                 </button>
               )}
+              <button
+                type="button"
+                disabled={busy}
+                onClick={() => {
+                  if (confirm(`Trajno obrisati uplatu ${formatMoney(p.amount)}? Poništena uplata ostaje kao trag, obrisana ne.`)) void run(() => removeFromOrder("payment", p.id));
+                }}
+                aria-label={`Obriši uplatu ${formatMoney(p.amount)}`}
+                className="inline-flex size-10 items-center justify-center rounded-md text-muted-foreground hover:bg-destructive/10 hover:text-destructive"
+              >
+                <Trash2 className="size-4" aria-hidden />
+              </button>
             </li>
           ))}
         </ul>
@@ -186,17 +198,29 @@ export function PaymentPanel({ orderId, orderStatus, total, paid, status, paymen
               <p className="text-xs text-muted-foreground tabular">
                 {formatDate(invoice.issuedDate)} · {formatMoney(invoice.total)}
               </p>
-              <button
-                type="button"
-                disabled={busy}
-                onClick={() => {
-                  const reason = prompt(`Razlog poništavanja računa ${invoice.number}:`);
-                  if (reason !== null) void run(() => voidInvoice(orderId, invoice.id, reason));
-                }}
-                className="self-start text-sm font-medium text-destructive"
-              >
-                Poništi račun
-              </button>
+              <div className="flex flex-wrap gap-x-5 gap-y-1">
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() => {
+                    const reason = prompt(`Razlog poništavanja računa ${invoice.number}:`);
+                    if (reason !== null) void run(() => voidInvoice(orderId, invoice.id, reason));
+                  }}
+                  className="text-sm font-medium text-destructive"
+                >
+                  Poništi račun
+                </button>
+                <button
+                  type="button"
+                  disabled={busy}
+                  onClick={() => {
+                    if (confirm(`Trajno obrisati račun ${invoice.number}? Poništen račun ostaje kao trag, obrisan ne.`)) void run(() => removeFromOrder("invoice", invoice.id));
+                  }}
+                  className="text-sm font-medium text-muted-foreground hover:text-destructive"
+                >
+                  Obriši račun
+                </button>
+              </div>
             </div>
           ) : (
             <Button type="button" variant="outline" className="w-full justify-start" disabled={busy || total <= 0} onClick={() => void run(() => makeInvoice(orderId))}>

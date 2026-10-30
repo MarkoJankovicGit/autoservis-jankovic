@@ -56,7 +56,7 @@ test("izmena, nije došao, otkazano ne broji preklapanje, brisanje", async () =>
   assert.equal(await A.getAppointment(b.id), null);
 });
 
-test("prijem iz termina: termin postaje „došao“ i vezan je za nalog; više se ne menja", async () => {
+test("prijem iz termina: termin postaje „došao“ i vezan je za nalog; više se ne menja, ali može da se obriše", async () => {
   const v = await V.createVehicle({ plate: "VA 901-TT", make: "Fiat" }, { mode: "new", customer: { name: "Klijent Prijema", phones: ["0649009001"] } });
   assert.ok(v.ok);
   if (!v.ok) return;
@@ -70,5 +70,7 @@ test("prijem iz termina: termin postaje „došao“ i vezan je za nalog; više 
   assert.ok(row?.orderNumber);
   assert.equal((await A.updateAppointment(a.id, { date: "2026-11-06", time: "08:00", vehicleId: v.id, reason: "Klima" })).ok, false);
   assert.equal((await A.setAppointmentStatus(a.id, "cancelled")).ok, false);
-  assert.equal(await A.deleteAppointment(a.id), false);
+  // brisanje je dozvoljeno i posle prijema; nalog ostaje
+  assert.equal(await A.deleteAppointment(a.id), true);
+  if (o.ok) assert.ok(await O.getOrder(o.id));
 });

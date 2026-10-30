@@ -14,6 +14,8 @@ import { customerFinance } from "@/server/finance";
 import { formatMoney } from "@/domain/money";
 import { OrderHistory } from "@/components/order-history";
 import { archiveCustomer } from "../actions";
+import { DeleteDialog } from "@/components/delete-dialog";
+import { deletionImpact } from "@/server/deletion";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const p = await getCustomer((await params).id);
@@ -22,8 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 export default async function KlijentPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const [profile, orders, fin] = await Promise.all([getCustomer(id), ordersForCustomer(id), customerFinance(id)]);
-  if (!profile) notFound();
+  const [profile, orders, fin, impact] = await Promise.all([getCustomer(id), ordersForCustomer(id), customerFinance(id), deletionImpact("customer", id)]);
+  if (!profile || !impact) notFound();
   const { customer: c, current, former } = profile;
 
   return (
@@ -61,6 +63,7 @@ export default async function KlijentPage({ params }: { params: Promise<{ id: st
                 {c.archivedAt ? "Vrati iz arhive" : "Arhiviraj"}
               </Button>
             </form>
+            <DeleteDialog kind="customer" id={c.id} what={`klijenta ${c.name}`} impact={impact} />
           </div>
         </div>
 

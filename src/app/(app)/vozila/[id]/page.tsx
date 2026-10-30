@@ -23,6 +23,8 @@ import { ReminderForm } from "./reminder-form";
 import { upcomingForVehicle } from "@/server/appointments";
 import { dayName, formatTime } from "@/domain/appointments";
 import { archiveVehicle } from "../actions";
+import { DeleteDialog } from "@/components/delete-dialog";
+import { deletionImpact } from "@/server/deletion";
 import { ReadingForm } from "./reading-form";
 import { DeleteReadingButton } from "./delete-reading-button";
 
@@ -44,7 +46,7 @@ function RegistrationBadge({ date }: { date?: string }) {
 
 export default async function KartonVozilaPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const [card, history, reminders, photos, upcoming] = await Promise.all([getVehicleCard(id), ordersForVehicle(id), remindersForVehicle(id), photosForVehicle(id), upcomingForVehicle(id)]);
+  const [card, history, reminders, photos, upcoming, impact] = await Promise.all([getVehicleCard(id), ordersForVehicle(id), remindersForVehicle(id), photosForVehicle(id), upcomingForVehicle(id), deletionImpact("vehicle", id)]);
   if (!card) notFound();
   const { vehicle: v, owner, ownerships, readings, trend, kmInYear } = card;
   const last = readings[0];
@@ -189,7 +191,7 @@ export default async function KartonVozilaPage({ params }: { params: Promise<{ i
                       <span className="w-24 text-muted-foreground tabular">{formatDate(r.date)}</span>
                       <span className="flex-1 font-medium tabular">{km(r.km)}</span>
                       <span className="text-muted-foreground">{r.source === "order" ? "nalog" : r.note || "ručno"}</span>
-                      {r.source === "manual" && <DeleteReadingButton vehicleId={v.id} readingId={r.id} label={`${formatDate(r.date)} ${km(r.km)}`} />}
+                      <DeleteReadingButton vehicleId={v.id} readingId={r.id} label={`${formatDate(r.date)} ${km(r.km)}`} />
                     </li>
                   ))}
                 </ul>
@@ -300,6 +302,17 @@ export default async function KartonVozilaPage({ params }: { params: Promise<{ i
               {v.archivedAt ? "Vrati vozilo iz arhive" : "Arhiviraj vozilo (otpisano, prodato van servisa)"}
             </Button>
           </form>
+          {impact && (
+            <DeleteDialog
+              kind="vehicle"
+              id={v.id}
+              what={`vozilo ${[v.plate ? formatPlate(v.plate) : undefined, v.make, v.model].filter(Boolean).join(" ")}`}
+              label="Obriši vozilo (pogrešan unos)"
+              impact={impact}
+              size="default"
+              className="w-full justify-start"
+            />
+          )}
         </aside>
       </div>
     </>

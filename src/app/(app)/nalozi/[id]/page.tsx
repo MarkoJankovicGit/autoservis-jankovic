@@ -18,6 +18,8 @@ import { reopen } from "../actions";
 import { ItemsEditor } from "./items-editor";
 import { TextBlock } from "./text-block";
 import { CancelDialog } from "./cancel-dialog";
+import { DeleteDialog } from "@/components/delete-dialog";
+import { deletionImpact } from "@/server/deletion";
 import { OrderPhotos } from "./order-photos";
 import { plural } from "@/domain/text";
 
@@ -37,8 +39,8 @@ export default async function NalogPage({
 }) {
   const { id } = await params;
   const sp = await searchParams;
-  const [d, suggestions, fin, partsOrders] = await Promise.all([getOrder(id), itemSuggestions(), orderFinance(id), listPartsOrders({ orderId: id })]);
-  if (!d) notFound();
+  const [d, suggestions, fin, partsOrders, impact] = await Promise.all([getOrder(id), itemSuggestions(), orderFinance(id), listPartsOrders({ orderId: id }), deletionImpact("order", id)]);
+  if (!d || !impact) notFound();
   const { order: o, vehicle: v, customer: c, items, attachments, openReminders, createdReminders, closedReminders } = d;
   const open = o.status === "open";
   const photos = attachments.map((a) => ({ id: a.id, category: a.category, width: a.width, height: a.height }));
@@ -263,11 +265,10 @@ export default async function NalogPage({
             <TextBlock orderId={o.id} field="internalNote" title="Interna napomena" value={o.internalNote} placeholder="Vidi je samo servis; ne ide na dokumente." emphasize={!!o.internalNote} />
           </section>
 
-          {open && (
-            <div className="flex justify-start">
-              <CancelDialog orderId={o.id} number={o.number} />
-            </div>
-          )}
+          <div className="flex flex-wrap justify-start gap-2">
+            {open && <CancelDialog orderId={o.id} number={o.number} />}
+            <DeleteDialog kind="order" id={o.id} what={`nalog ${o.number}`} label="Obriši nalog" impact={impact} />
+          </div>
         </aside>
       </div>
     </>

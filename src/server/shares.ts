@@ -186,10 +186,12 @@ function activeShare(db: Db, token: string): VehicleShare | undefined {
 
 export type PublicShare = { snapshot: ShareSnapshot; sharedDate: string; expiresAt: string };
 
-/** Snimak bez fotografija koje su u međuvremenu obrisane. */
+/** Snimak bez naloga i fotografija koji su u međuvremenu obrisani. */
 function shareView(db: Db, s: VehicleShare): PublicShare {
   const exists = new Set(db.attachments.map((a) => a.id));
+  const orders = new Set(db.orders.map((o) => o.id));
   const snapshot = structuredClone(s.snapshot);
+  snapshot.orders = snapshot.orders.filter((o) => orders.has(o.id));
   for (const o of snapshot.orders) o.photos = o.photos.filter((p) => exists.has(p.id));
   return { snapshot, sharedDate: s.createdAt.slice(0, 10), expiresAt: s.expiresAt };
 }
