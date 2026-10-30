@@ -44,7 +44,8 @@ before(async () => {
   await new Promise<void>((r) => server.listen(0, "127.0.0.1", r));
   const addr = server.address() as { port: number };
   process.env.SUPABASE_URL = `http://127.0.0.1:${addr.port}/`;
-  process.env.SUPABASE_SECRET_KEY = "sb_secret_test";
+  // nalepljen u dva reda, kao što se desilo na Vercelu
+  process.env.SUPABASE_SECRET_KEY = "sb_secret_\ntest\n";
   B = await import("./blob-store.ts");
 });
 after(() => new Promise<void>((r) => server.close(() => r())));

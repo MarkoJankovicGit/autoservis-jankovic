@@ -104,8 +104,10 @@ let store: BlobStore | null = null;
 
 export function blobs(): BlobStore {
   if (store) return store;
-  const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_SECRET_KEY;
+  const url = process.env.SUPABASE_URL?.trim();
+  // ključ nema razmake: novi red ili razmak iz lepljenja se uklanja; neispravan ključ se ne ispisuje (fetch bi ga stavio u poruku greške)
+  const key = process.env.SUPABASE_SECRET_KEY?.replace(/\s+/g, "");
+  if (key && !/^[\x21-\x7e]+$/.test(key)) throw new Error("SUPABASE_SECRET_KEY ima nedozvoljene znakove (nalepi ključ ponovo, u jednom redu).");
   if (url && key) return (store = supabase(url, key));
   if (process.env.VERCEL) throw new Error("Nedostaju SUPABASE_URL i SUPABASE_SECRET_KEY (Vercel → Settings → Environment Variables).");
   return (store = local);
