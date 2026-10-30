@@ -72,14 +72,23 @@ function migrationsDir(): string {
   return path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..", "..", "drizzle");
 }
 
+/**
+ * Supabase pooler za aplikaciju: transaction mode (6543) umesto session mode (5432).
+ * U session mode-u svaka veza drži mesto dok je klijent ne zatvori (besplatni plan: 15), a serverless instance
+ * (i zaostale iz starih deploy-a) to brzo potroše. Ista adresa i korisnik, samo port; migracije i bekap ostaju na 5432.
+ */
+export function appDatabaseUrl(url: string): string {
+  return url.replace(/(\.pooler\.supabase\.com):5432(?=[/?]|$)/, "$1:6543");
+}
+
 async function connect(): Promise<Database> {
-  const url = process.env.DATABASE_URL;
+  const url = process.env.DATABASE_URL?.trim();
   if (url) {
     const { default: postgres } = await import("postgres");
     const { drizzle } = await import("drizzle-orm/postgres-js");
     const local = /@(localhost|127\.0\.0\.1)[:/]/.test(url);
-    // Supabase pooler: bez pripremljenih upita, malo konekcija po instanci servera
-    const client = postgres(url, { max: 3, idle_timeout: 20, prepare: false, ssl: local ? false : "require" });
+    // transaction mode: bez pripremljenih upita, malo konekcija po instanci servera
+    const client = postgres(appDatabaseUrl(url), { max: 3, idle_timeout: 20, prepare: false, ssl: local ? false : "require" });
     return drizzle(client, { casing: "snake_case" }) as unknown as Database;
   }
   if (process.env.VERCEL) throw new Error("Nedostaje DATABASE_URL (Vercel → Settings → Environment Variables).");

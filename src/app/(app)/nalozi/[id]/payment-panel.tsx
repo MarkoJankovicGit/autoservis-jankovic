@@ -89,7 +89,8 @@ export function PaymentPanel({ orderId, orderStatus, total, paid, status, paymen
         </Button>
       )}
       {orderStatus !== "cancelled" && (balance > 0 || showForm || total <= 0) && (
-        <form key={nonce} onSubmit={onSubmit} className="flex flex-col gap-3 rounded-xl bg-muted/50 p-3" noValidate>
+        // ključ prati i dug: posle uplate polje nudi novi preostali iznos (osvežen nalog stiže posle onSuccess)
+        <form key={`${nonce}:${balance}`} onSubmit={onSubmit} className="flex flex-col gap-3 rounded-xl bg-muted/50 p-3" noValidate>
           <input type="hidden" name="orderId" value={orderId} />
           {e.form && <p className="text-sm text-destructive">{e.form}</p>}
           <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,9.5rem)] gap-2">

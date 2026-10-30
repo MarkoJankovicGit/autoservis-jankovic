@@ -45,7 +45,7 @@ Aplikacija je na http://localhost:3000.
 
 | | Lokalno i testovi | Produkcija (Vercel) |
 |---|---|---|
-| Baza | PGlite (pravi Postgres u Node-u) u `.data/pglite`; testovi u memoriji | Supabase Postgres, Frankfurt (`DATABASE_URL`) |
+| Baza | PGlite (pravi Postgres u Node-u) u `.data/pglite`; testovi u memoriji | Supabase Postgres, Frankfurt (`DATABASE_URL`, Session pooler 5432; aplikacija sama ide na transaction pooler 6543); funkcije u `fra1` (`vercel.json`) |
 | Fotografije | `.data/uploads` | privatan Supabase Storage bucket `fotografije` (`SUPABASE_URL`, `SUPABASE_SECRET_KEY`) |
 | Migracije | primenjuju se same pri pokretanju | `vercel-build` ih primenjuje pre build-a (samo Production) |
 
